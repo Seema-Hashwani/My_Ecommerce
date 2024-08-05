@@ -8,6 +8,7 @@ import Featured from "@components/Featured";
 import Services from "@components/Services";
 import Footer from "@components/Footer";
 import BestSelling from "@components/BestSelling";
+import Bar from "@components/Bar";
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <BestSelling/>
       <Services/>
       <Footer/>
+      <Bar/>
       </div>
     </main>
   );

@@ -5,8 +5,10 @@ import Navbar from "@components/Navbar";
 import Services from "@components/Services";
 import Footer from "@components/Footer";
 import Link from "next/link";
+import Bar from "@components/Bar";
 
-export default function Home() {
+
+export default function LoginPage() {
   return (
     <main className="flex min-h-screen w-screen flex-col items-center justify-start gap-y-4 px-4 bg-white">
       <Navbar />
@@ -14,8 +16,8 @@ export default function Home() {
 
       <div className="flex flex-row justify-center w-full max-w-screen-lg h-96">
         <div className="flex w-full md:w-1/2 flex-col p-10 justify-center items-start border-r-2 gap-y-2 border-gray-300">
-          <p className="text-xl font-bold text-black mb-8">LOGIN</p>
-          <p className="text-gray-700">email address</p>
+          <p className="text-xl font-bold text-black mb-6">LOGIN</p>
+          <p className="text-gray-700">Email Address</p>
           <input
             type="text"
             className="text-black border border-red-800 rounded-md focus:border-red-900 focus:outline-none focus:border-2 p-2 w-full mb-2"
@@ -26,19 +28,29 @@ export default function Home() {
             className="text-black border border-red-800 rounded-md focus:border-red-900 focus:outline-none focus:border-2 p-2 w-full mb-4"
           />
           <button className="bg-red-900 text-white p-2 w-full rounded-md">Login</button>
+          <div className="text-black w-full flex flex-row justify-between items-center">
+
+            <label className=" cursor-pointer">
+              <input type="checkbox" /> Remember Me
+            </label>
+
+            <button className="text-red-800 hover:text-red-600">Lost your password?</button>
+
+          </div>
         </div>
 
         <div className="flex w-full md:w-1/2 flex-col p-10 justify-start items-center gap-y-2">
-          <p className="text-xl font-bold text-black mb-8">LOGIN</p>
+          <p className="text-xl font-bold text-black mb-6">REGISTER</p>
           <p className="text-black text-center">
             Registering for this site allows you to access your order status and history. Just fill in the fields below, and we will get a new account set up for you in no time. We will only ask you for information necessary to make the purchase process faster and easier.
           </p>
-          <Link href={"/register"}><button className="bg-red-900 text-white p-2 w-28 rounded-md mt-2">Register</button></Link>
+          <Link href={"/register"}><button className="bg-red-900 text-white p-2 w-28 rounded-md mt-3">Register</button></Link>
         </div>
       </div>
 
       <Services />
       <Footer />
+      <Bar/>
     </main>
   );
 }

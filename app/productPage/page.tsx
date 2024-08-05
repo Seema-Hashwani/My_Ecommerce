@@ -8,6 +8,8 @@ import Services from "@components/Services";
 import Footer from "@components/Footer";
 import { IoIosStarOutline } from "react-icons/io";
 import productImage from "@public/images/product.jpg";
+import Bar from "@components/Bar";
+import Link from "next/link";
 
 interface Product {
   id: number;
@@ -61,9 +63,9 @@ export default function ProductPage() {
                   ))}
                 </div>
                 <p className="font-semibold text-red-900">{product.price}</p>
-                <button className="bg-red-900 hover:bg-red-950 text-white p-2 font-bold mt-2">
+                <Link href={"/login"}><button className="bg-red-900 hover:bg-red-950 text-white p-2 font-bold mt-2">
                   Login to Shop
-                </button>
+                </button></Link>
               </div>
             ))}
           </div>
@@ -74,6 +76,7 @@ export default function ProductPage() {
 
       <Services />
       <Footer />
+      <Bar/>
     </main>
   );
 }
