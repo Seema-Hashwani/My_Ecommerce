@@ -77,9 +77,6 @@ export default function UsersPage() {
   return (
     <main className="flex min-h-screen w-screen flex-col items-center justify-start gap-y-10 px-24 bg-white text-black">
       <p className="text-black text-4xl font-bold underline mt-5">USERS PAGE</p>
-      <Link href="/admin/users/add">
-        <button className="bg-red-800 hover:bg-red-900 text-white p-2 rounded">Add User</button>
-      </Link>
 
       {loading ? (
         <p>Loading users...</p>

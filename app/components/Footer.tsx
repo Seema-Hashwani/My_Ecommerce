@@ -60,7 +60,7 @@ export default function Footer() {
                         </tr>
                         <tr>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700"><Link href={"/shipping"}><p className="cursor-pointer hover:text-red-900">Shipping and Returns</p></Link></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/login"}><p className="cursor-pointer hover:text-red-900">Cart</p></Link></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/cart"}><p className="cursor-pointer hover:text-red-900">Cart</p></Link></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Accessories & Tools</p></Link></td>
                         </tr>
                         

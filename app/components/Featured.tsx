@@ -21,7 +21,7 @@ interface CartItem extends Product {
 
 export default function Featured() {
   const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function Featured() {
     <div className="flex flex-col h-auto w-screen justify-center items-center px-24">
       <p className="text-black text-4xl font-bold m-4">Featured Items</p>
 
-      <div className="flex flex-row justify-between items-center text-black w-full">
+      <div className="flex flex-row flex-wrap justify-between items-center text-black w-full">
         {products.length > 0 ? (
           products.map((product) => (
             <div

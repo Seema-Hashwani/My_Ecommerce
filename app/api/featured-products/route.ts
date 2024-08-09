@@ -9,6 +9,8 @@ export async function GET() {
     // Fetch 4 random products
     const products = await collection.aggregate([{ $sample: { size: 4 } }]).toArray();
 
+    console.log('Fetched products:', products); // Debugging line
+
     return NextResponse.json({ success: true, products });
   } catch (error) {
     console.error('Error fetching products:', error);
