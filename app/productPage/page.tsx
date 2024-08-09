@@ -1,40 +1,85 @@
 'use client';
 
-import Image, { StaticImageData } from "next/image";
-import React, { useState } from "react";
-import Menu from "@components/Menu";
-import Navbar from "@components/Navbar";
-import Services from "@components/Services";
-import Footer from "@components/Footer";
-import { IoIosStarOutline } from "react-icons/io";
-import productImage from "@public/images/product.jpg";
-import Bar from "@components/Bar";
-import Link from "next/link";
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { IoIosStarOutline } from 'react-icons/io';
+import Menu from './../components/Menu';
+import Navbar from './../components/Navbar';
+import Services from './../components/Services';
+import Footer from './../components/Footer';
+import Bar from './../components/Bar';
+import Link from 'next/link';
 
 interface Product {
-  id: number;
+  _id: string;
   name: string;
   description: string;
-  price: string;
-  image: StaticImageData;
+  price: number; // Changed to number
+  image: string;
 }
 
-const initialProducts: Product[] = [
-  { id: 1, name: "Product 1", description: "Description 1", price: "$10", image: productImage },
-  { id: 2, name: "Product 2", description: "Description 2", price: "$20", image: productImage },
-  { id: 3, name: "Product 3", description: "Description 3", price: "$30", image: productImage },
-  { id: 4, name: "Product 4", description: "Description 4", price: "$40", image: productImage },
-  { id: 1, name: "Product 5", description: "Description 1", price: "$10", image: productImage },
-  { id: 2, name: "Product 6", description: "Description 2", price: "$20", image: productImage },
-  { id: 3, name: "Product 7", description: "Description 3", price: "$30", image: productImage },
-  { id: 4, name: "Product 8", description: "Description 4", price: "$40", image: productImage },
-  { id: 3, name: "Product 3", description: "Description 3", price: "$30", image: productImage },
-  { id: 4, name: "Product 4", description: "Description 4", price: "$40", image: productImage },
-  // Add more products as needed
-];
+interface CartItem extends Product {
+  id: string;
+  count: number;
+}
 
 export default function ProductPage() {
-  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/products');
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.statusText}`);
+        }
+        const data = await response.json();
+        if (data.success) {
+          setProducts(data.products);
+        } else {
+          console.error('Failed to fetch products:', data.error);
+        }
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+
+    // Check if user is logged in
+    const username = localStorage.getItem('username');
+    setIsLoggedIn(!!username);
+  }, []);
+
+  const handleButtonClick = (product: Product) => {
+    if (isLoggedIn) {
+      const newItem: CartItem = {
+        ...product,
+        id: product._id,
+        count: 1,
+      };
+
+      let cart: CartItem[] = JSON.parse(localStorage.getItem('cart') || '[]');
+      const existingProductIndex = cart.findIndex((item) => item.id === newItem.id);
+
+      if (existingProductIndex !== -1) {
+        cart[existingProductIndex].count += 1;
+      } else {
+        cart.push(newItem);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Product added to cart!');
+    } else {
+      window.location.href = '/login';
+    }
+  };
+
+  if (loading) return <p>Loading...</p>;
 
   return (
     <main className="flex min-h-screen w-screen flex-col items-center justify-start gap-y-4 px-24 bg-white">
@@ -45,15 +90,17 @@ export default function ProductPage() {
       <div className="flex flex-col w-full gap-y-4 p-4">
         {products.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {products.map(product => (
+            {products.map((product) => (
               <div
-                key={product.id}
+                key={product._id}
                 className="flex flex-col items-center border border-black shadow-md p-4 text-black shadow-slate-500"
               >
                 <Image
                   src={product.image}
                   alt={product.name}
                   className="w-48 h-48 object-cover mb-2"
+                  width={192}
+                  height={192}
                 />
                 <p className="font-bold text-lg">{product.name}</p>
                 <p className="text-center">{product.description}</p>
@@ -62,10 +109,13 @@ export default function ProductPage() {
                     <IoIosStarOutline key={i} className="cursor-pointer" />
                   ))}
                 </div>
-                <p className="font-semibold text-red-900">{product.price}</p>
-                <Link href={"/login"}><button className="bg-red-900 hover:bg-red-950 text-white p-2 font-bold mt-2">
-                  Login to Shop
-                </button></Link>
+                <p className="font-semibold text-red-900">${product.price.toFixed(2)}</p>
+                <button
+                  onClick={() => handleButtonClick(product)}
+                  className="bg-red-900 hover:bg-red-950 text-white p-2 font-bold mt-2"
+                >
+                  {isLoggedIn ? 'Add to Cart' : 'Login to Shop'}
+                </button>
               </div>
             ))}
           </div>
@@ -76,7 +126,7 @@ export default function ProductPage() {
 
       <Services />
       <Footer />
-      <Bar/>
+      <Bar />
     </main>
   );
 }

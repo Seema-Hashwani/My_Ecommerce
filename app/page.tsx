@@ -1,14 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import Navbar from "./components/Navbar";
-import Menu from "@components/Menu";
-import Carousel from "@components/Carousel";
-import Banner from "@components/Banner";
-import Featured from "@components/Featured";
-import Services from "@components/Services";
-import Footer from "@components/Footer";
-import BestSelling from "@components/BestSelling";
-import Bar from "@components/Bar";
+import Menu from "./components/Menu";
+import Carousel from "./components/Carousel";
+import Banner from "./components/Banner";
+import Featured from "./components/Featured";
+import Services from "./components/Services";
+import Footer from "./components/Footer";
+import BestSelling from "./components/BestSelling";
+import Bar from "./components/Bar";
 
 
 export default function Home() {

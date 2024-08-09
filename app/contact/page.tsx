@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import Menu from "@components/Menu";
-import Navbar from "@components/Navbar";
-import Services from "@components/Services";
-import Footer from "@components/Footer";
+import Menu from "./../components/Menu";
+import Navbar from "./../components/Navbar";
+import Services from "./../components/Services";
+import Footer from "./../components/Footer";
 import map from '@public/images/map.jpg';
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
@@ -13,7 +13,7 @@ import { FaEnvelope } from "react-icons/fa6";
 
 
 import Link from "next/link";
-import Bar from "@components/Bar";
+import Bar from "./../components/Bar";
 
 export default function ContactPage() {
     return (

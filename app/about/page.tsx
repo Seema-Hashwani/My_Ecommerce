@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import Menu from "@components/Menu";
-import Navbar from "@components/Navbar";
-import Services from "@components/Services";
-import Footer from "@components/Footer";
+import Menu from "./../components/Menu";
+import Navbar from "./../components/Navbar";
+import Services from "./../components/Services";
+import Footer from "./../components/Footer";
 import Link from "next/link";
 import About from '@public/images/About-Us.jpg';
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import reviews from '@public/images/reviews.jpg';
-import Bar from "@components/Bar";
+import Bar from "./../components/Bar";
 
 
 

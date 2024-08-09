@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import Menu from "@components/Menu";
-import Navbar from "@components/Navbar";
-import Services from "@components/Services";
-import Footer from "@components/Footer";
+import Menu from "./../components/Menu";
+import Navbar from "./../components/Navbar";
+import Services from "./../components/Services";
+import Footer from "./../components/Footer";
 import Link from "next/link";
-import Bar from "@components/Bar";
+import Bar from "./../components/Bar";
 
 
 export default function PrivacyPage() {
