@@ -19,7 +19,7 @@ export default function ShippingPage() {
                 <div className="px-24 flex flex-col gap-y-3 my-5">
                     <p className="text-black font-bold text-lg">Return Policy
                     </p>
-                    <p className="text-gray-600 ">Cell Parts Hub offers a lifetime warranty on all parts and accessories purchased from our website. This warranty applies to all part defects. Part tampering and/or damage voids eligibility.<br/><br/>Examples of Part Tampering:</p>
+                    <p className="text-gray-600 ">Our Company offers a lifetime warranty on all parts and accessories purchased from our website. This warranty applies to all part defects. Part tampering and/or damage voids eligibility.<br/><br/>Examples of Part Tampering:</p>
                     <ul className="list-none p-0">
                         <li className="text-gray-600 relative pl-6 before:content-['✓'] before:absolute before:left-0 before:text-black before:font-bold">
                         Changing of any components.

@@ -1,10 +1,10 @@
 'use client';
 import React, { useState } from "react";
 import Image from "next/image";
-import slider1 from "@public/images/slider1.jpg";
-import slider2 from "@public/images/slider2.jpg";
-import slider3 from "@public/images/slider3.jpg";
-import slider4 from "@public/images/slider4.jpg";
+import slider1 from "./../../public/images/slider1.jpg";
+import slider2 from "./../../public/images/slider2.jpg";
+import slider3 from "./../../public/images/slider3.jpg";
+import slider4 from "./../../public/images/slider4.jpg";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 export default function Carousel() {

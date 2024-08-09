@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import Image from 'next/image';
-import placeholderImage from '@public/images/product.jpg';
+import placeholderImage from './../../public/images/product.jpg';
 
 interface CartItem {
   id: string;

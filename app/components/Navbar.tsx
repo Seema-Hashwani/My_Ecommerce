@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import logo from '@public/images/logo.jpg';
+import logo from './../../public/images/logo.jpg';
 import { LuUser2 } from "react-icons/lu";
 import { CgShoppingCart } from "react-icons/cg";
 import Link from "next/link";

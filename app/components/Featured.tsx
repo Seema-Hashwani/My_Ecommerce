@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { IoIosStarOutline } from 'react-icons/io';
-import productImage from '@public/images/product.jpg'; // Placeholder for product images
+import productImage from './../../public/images/product.jpg'; // Placeholder for product images
 
 interface Product {
   _id: string;

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@public/images/logo.jpg";
+import logo from "./../../public/images/logo.jpg";
 import { IoIosSend, IoIosPhonePortrait } from "react-icons/io";
 import { BsEnvelope } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -16,15 +16,15 @@ export default function Footer() {
                 <Image src={logo} alt="logo" className="w-80 mb-3" />
                 <div className="flex flex-row items-center gap-x-2">
                     <IoIosSend className="text-red-900 w-5 h-5" />
-                    <p className="text-slate-700">5755 Bonhomme Rd STE 400</p>
+                    <p className="text-slate-700">Some Street Address</p>
                 </div>
                 <div className="flex flex-row items-center gap-x-2">
                     <IoIosPhonePortrait className="text-red-900 w-5 h-5" />
-                    <p className="text-slate-700">Phone: +92 332 6789000</p>
+                    <p className="text-slate-700">Phone: +92 xxx xxxxxxx</p>
                 </div>
                 <div className="flex flex-row items-center gap-x-2">
                     <BsEnvelope className="text-red-900 w-5 h-5" />
-                    <p className="text-slate-700">Email: help@digitalcube.pk</p>
+                    <p className="text-slate-700">Email: help@mycompany.com</p>
                 </div>
             </div>
 
@@ -41,27 +41,27 @@ export default function Footer() {
                         <tr>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700"><Link href={"/about"}><p className="cursor-pointer hover:text-red-900">About Us</p></Link></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/login"}><p className="cursor-pointer hover:text-red-900">My Account</p></Link></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Apple</p></Link></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Category 1</p></Link></td>
                         </tr>
                         <tr>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700"><Link href={"/contact"}><p className="cursor-pointer hover:text-red-900">Contact Us</p></Link></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/login"}><p className="cursor-pointer hover:text-red-900">Orders</p></Link></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Samsung</p></Link></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Category 2</p></Link></td>
                         </tr>
                         <tr>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700"><Link href={"/privacy"}><p className="cursor-pointer hover:text-red-900">Privacy Policy</p></Link></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/login"}><p className="cursor-pointer hover:text-red-900">Account Details</p></Link></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">LG</p></Link></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Category 3</p></Link></td>
                         </tr>
                         <tr>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700"><Link href={"/terms"}><p className="cursor-pointer hover:text-red-900">Terms & Conditions</p></Link></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/login"}><p className="cursor-pointer hover:text-red-900">Order Tracking</p></Link></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Motorola</p></Link></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Category 4</p></Link></td>
                         </tr>
                         <tr>
                             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-700"><Link href={"/shipping"}><p className="cursor-pointer hover:text-red-900">Shipping and Returns</p></Link></td>
                             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/cart"}><p className="cursor-pointer hover:text-red-900">Cart</p></Link></td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Accessories & Tools</p></Link></td>
+                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700"><Link href={"/productPage"}><p className="cursor-pointer hover:text-red-900">Category 5</p></Link></td>
                         </tr>
                         
                     </tbody>
